@@ -16,7 +16,7 @@ intents.members = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 
-based_role = "Femboy"
+based_role = "Sample"
 
 @bot.event
 async def on_ready():
@@ -43,7 +43,7 @@ async def hello(ctx):
 
 @bot.command()
 async def assign(ctx):
-    role = await discord.utils.get_role(ctx.guild.roles, name="Femboy")
+    role = await discord.utils.get_role(ctx.guild.roles, name=based_role)
     if role:
         await ctx.author.add_roles(role)
         await ctx.send(f"{ctx.author.mention} is now assigned to {based_role}")
